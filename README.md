@@ -11,6 +11,19 @@ A fully working image and video compression application built with C++ and Qt. T
 <h4>Main Window</h4>
 <img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_1_2026-06-23_05-14-59.jpg" width = "400" height = "250">
 
+<h4>Video Compression Tab</h4>
+<img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_2_2026-06-23_05-15-00.jpg" width = "400" height = "250">
+<br>
+<img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_1_2026-06-23_05-14-59.jpg" width = "400" height = "250">
+
+<h4>Image Compression Tab</h4>
+<img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_4_2026-06-23_05-15-00.jpg" width = "400" height = "250">
+<br>
+<img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_5_2026-06-23_05-15-00.jpg" width = "400" height = "250">
+
+<h4>Preview Tab</h4>
+<img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_6_2026-06-23_05-15-00.jpg" width = "400" height = "250">
+
 ## Technologies
 - C++
 - Qt Framework
