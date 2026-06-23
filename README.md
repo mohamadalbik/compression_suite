@@ -47,7 +47,7 @@ If you don't have OpenCV pre-built with MinGW, follow these steps:
 - mingw32-make -j4
 - mingw32-make install
 ### Building This Project 
-1. **Clone this repository:** git clone https://github.com/your-username/image-video-compressor.git
+1. **Clone this repository:** git clone https://github.commohamadalbik/compression_suite.git
 2. ***Open `CMakeLists.txt`*** and update the file paths to match your local system:
 - Change the OpenCV build path to your OpenCV build directory
 - Change the Qt path to your Qt installation directory
