@@ -7,7 +7,8 @@ A fully working image and video compression application built with C++ and Qt. T
 - Real-time preview of compression results
 - Support for multiple image and video formats
 ## Screenshots
-![Main Window](https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_1_2026-06-23_05-14-59.jpg)
+![Main Window]
+<img src = "https://github.com/mohamadalbik/compression_suite/blob/main/.pics/photo_1_2026-06-23_05-14-59.jpg" width = "400" height = "250">
 ## Technologies
 - C++
 - Qt Framework
