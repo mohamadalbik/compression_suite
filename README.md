@@ -37,7 +37,7 @@ A fully working image and video compression application built with C++ and Qt. T
 - MinGW compiler
 ### Building OpenCV from Source
 If you don't have OpenCV pre-built with MinGW, follow these steps:
-1. Download the OpenCV source from [opencv.org(https://opencv.org/releases/)] 
+1. Download the OpenCV source from [opencv.org](https://opencv.org/releases/) 
 2. Open CMake GUI 
 3. Set the source path to the OpenCV source folder 
 4. Set the build path to opencv/build 
