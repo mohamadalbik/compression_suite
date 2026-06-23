@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/icons8-add-file-50.png</file>
+        <file>icons/icons8-add-folder-40.png</file>
+        <file>icons/icons8-close-40.png</file>
+        <file>icons/icons8-image-50.png</file>
+        <file>icons/icons8-image-file-40.png</file>
+        <file>icons/icons8-picture-40.png</file>
+        <file>icons/icons8-video-32.png</file>
+        <file>icons/icons8-video-50.png</file>
+        <file>icons/icons8-play-50.png</file>
+        <file>icons/icons8-compression-80.png</file>
+        <file>icons/icons8-drag-and-drop-50.png</file>
+        <file>icons/icons8-drag-and-drop-50-2.png</file>
+        <file>icons/icons8-drag-and-drop-100.png</file>
+    </qresource>
+</RCC>

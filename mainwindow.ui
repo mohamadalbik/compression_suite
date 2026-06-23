@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>798</width>
+    <height>765</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Video Compressor</string>
+  </property>
+  <property name="styleSheet">
+   <string>
+
+QMainWindow {
+ background-color: #ffffff;
+ color: #f5f5f5;
+ font-family: Segoe UI;
+ font-size: 10pt;
+}
+
+QFrame#topBar {
+ background-color: #111656;
+ border-bottom: 1px solid #e0e0e0;
+ padding: 10px;
+ font-size: 14pt;
+ font-weight: bold;
+ qproperty-alignment: AlignCenter;
+}
+QLabel#labelTitle {
+    color: #f5f5f5;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+QPushButton {
+ background-color: #111656;
+ color: white;
+ border: none;
+ padding: 6px 12px;
+ border-radius: 4px;
+}
+
+QPushButton:hover {
+ background-color: #1a252f;
+}
+
+QPushButton#btnStart {
+ background-color: #111656;
+}
+
+QPushButton#btnStart:hover {
+ background-color: #005fa3;
+}
+
+QTableWidget {
+ background-color: #ffffff;
+ border: 1px solid #e0e0e0;
+ gridline-color: #f0f0f0;
+ alternate-background-color: #fafafa;
+}
+
+QHeaderView::section {
+ background-color: #f5f5f5;
+ color: #2c3e50;
+ border: none;
+ padding: 6px;
+}
+
+QTabWidget::pane {
+ border: 1px solid #e0e0e0;
+ background: #ffffff;
+}
+
+QTabBar::tab {
+ background: #f5f5f5;
+ padding: 8px 12px;
+ border: 1px solid #e0e0e0;
+ border-bottom: none;
+}
+
+QTabBar::tab:selected {
+ background: #ffffff;
+ border-bottom: 2px solid #0078d7;
+}
+
+QComboBox {
+ border: 1px solid #777575;
+ padding: 4px;
+ background: white;
+}
+
+QSlider::groove:horizontal {
+ height: 5px;
+ background: #d0d0d0;
+}
+
+QLabel#TableOverLay {
+    color: #888888;
+    font-size: 14px;
+    font-weight: normal;
+    background-color: rgba(45, 45, 45, 180);
+    border: 2px dashed #555555;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+QSlider::handle:horizontal {
+ background: #0078d7;
+ width: 12px;
+ margin: -4px 0;
+ border-radius: 6px;
+}
+
+QRadioButton, QCheckBox {
+ spacing: 6px;
+}
+
+ </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <item>
+     <widget class="QFrame" name="topBar">
+      <layout class="QHBoxLayout" name="horizontalLayout_top">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="maximumSize">
+          <size>
+           <width>74</width>
+           <height>71</height>
+          </size>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="recources.qrc">:/icons/icons/icons8-compression-80.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelTitle">
+         <property name="text">
+          <string>Compression System</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="spacer_top">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>23</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::TextElideMode::ElideMiddle</enum>
+      </property>
+      <widget class="QWidget" name="tab_video">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/icons/icons/icons8-video-50.png</normaloff>:/icons/icons/icons8-video-50.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Compress Videos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_tab">
+        <item>
+         <widget class="QFrame" name="settingsPanel">
+          <layout class="QGridLayout" name="gridLayout_settings">
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="compressMode">
+             <item>
+              <widget class="QRadioButton" name="radioWeak">
+               <property name="text">
+                <string>Weak</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioStandard">
+               <property name="text">
+                <string>Standard</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioStrong">
+               <property name="text">
+                <string>Strong</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Resolution</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Output Format</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Compress Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="comboResolution">
+             <item>
+              <property name="text">
+               <string>Original</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>352x240</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>352x288</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>320x240</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>640x360</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>640x480</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label">
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Frame rate</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <layout class="QHBoxLayout" name="outputFormat">
+             <item>
+              <widget class="QRadioButton" name="radioButtonDefault">
+               <property name="text">
+                <string>Default</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_2</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButtonMP4">
+               <property name="text">
+                <string>MP4</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_2</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButtonAVI">
+               <property name="text">
+                <string>AVI</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_2</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="3">
+            <widget class="QComboBox" name="comboFPS">
+             <item>
+              <property name="text">
+               <string>Original</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>29</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>29.97</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>30</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SizeConstraint::SetFixedSize</enum>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnAdd">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Add Video Files</string>
+            </property>
+            <property name="icon">
+             <iconset resource="recources.qrc">
+              <normaloff>:/icons/icons/icons8-add-file-50.png</normaloff>:/icons/icons/icons8-add-file-50.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>13</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStart">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Start All</string>
+            </property>
+            <property name="icon">
+             <iconset resource="recources.qrc">
+              <normaloff>:/icons/icons/icons8-play-50.png</normaloff>:/icons/icons/icons8-play-50.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="DropTableWidget" name="tableVideos">
+          <property name="acceptDrops">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #111656;
+ color: white;
+font-size:10pt;
+font-weight:650;
+ border: none;
+ padding: 6px 12px;
+ border-radius: 4px;
+}
+</string>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+          </property>
+          <property name="tabKeyNavigation">
+           <bool>false</bool>
+          </property>
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="dragDropOverwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::DragDropMode::DropOnly</enum>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+          </property>
+          <property name="textElideMode">
+           <enum>Qt::TextElideMode::ElideRight</enum>
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>9</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>Filename</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Resolution</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Frame rate</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Size</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Duration</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Progress</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Percentage</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_image">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/icons/icons/icons8-image-50.png</normaloff>:/icons/icons/icons8-image-50.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Compress Images</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_imageTab">
+        <item>
+         <widget class="QFrame" name="settingsPanel_image">
+          <layout class="QGridLayout" name="gridLayout_imageSettings">
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_img_format">
+             <property name="text">
+              <string>Output Format</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <layout class="QHBoxLayout">
+             <item>
+              <widget class="QRadioButton" name="radioImgDefault">
+               <property name="text">
+                <string>Default</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_4</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioImgPNG">
+               <property name="text">
+                <string>PNG</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_4</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioImgJPG">
+               <property name="text">
+                <string>JPG</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_4</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_img_mode">
+             <property name="text">
+              <string>Compress Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <layout class="QHBoxLayout">
+             <item>
+              <widget class="QRadioButton" name="radioImgWeak">
+               <property name="text">
+                <string>Weak</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_3</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioImgStandard">
+               <property name="text">
+                <string>Standard</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_3</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioImgStrong">
+               <property name="text">
+                <string>Strong</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_3</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QPushButton" name="btnAddImages">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Add Images</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/icons/icons/icons8-add-image-50.png</normaloff>:/icons/icons/icons8-add-image-50.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStartImages">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Start All</string>
+            </property>
+            <property name="icon">
+             <iconset resource="recources.qrc">
+              <normaloff>:/icons/icons/icons8-play-50.png</normaloff>:/icons/icons/icons8-play-50.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="DropTableWidget" name="tableImages">
+          <property name="acceptDrops">
+           <bool>true</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::DragDropMode::DropOnly</enum>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+          </property>
+          <property name="columnCount">
+           <number>7</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>Filename</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Size</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Status</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Progress</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Compressed Size</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Percentage</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_play">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>:/icons/icons/icons8-play-button-50.png</normaloff>:/icons/icons/icons8-play-button-50.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Play / Preview</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_play">
+        <item>
+         <widget class="QFrame" name="previewFrame">
+          <layout class="QVBoxLayout" name="verticalLayout_preview">
+           <item>
+            <widget class="QLabel" name="videoPreviewLabel">
+             <property name="minimumSize">
+              <size>
+               <width>640</width>
+               <height>360</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string>background-color: #000000; border: 1px solid #333333;</string>
+             </property>
+             <property name="text">
+              <string>No video loaded</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="controlsLayout">
+             <item>
+              <widget class="QPushButton" name="btnOpenVideo">
+               <property name="text">
+                <string>Open .myvid / Video</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnPlay">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>▶ Play</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnPause">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>⏸ Pause</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnStop">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>⏹ Stop</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer>
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="seekLayout">
+             <item>
+              <widget class="QSlider" name="seekSlider">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="timeLabel">
+               <property name="text">
+                <string>00:00 / 00:00</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="infoGroup">
+          <property name="title">
+           <string>Video Info</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_info">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_info_res">
+             <property name="text">
+              <string>Resolution: -</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_info_fps">
+             <property name="text">
+              <string>FPS: -</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_info_duration">
+             <property name="text">
+              <string>Duration: -</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_info_format">
+             <property name="text">
+              <string>Format: -</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DropTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header location="global">droptablewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="recources.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_2"/>
+ </buttongroups>
+</ui>
